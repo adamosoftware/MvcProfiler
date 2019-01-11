@@ -12,5 +12,13 @@
     <description>Lightweight profiler for MVC5 using Postulate.Lite ORM</description>    
     <copyright>Copyright (c) Adam O'Neil 2019</copyright>
     <tags>mvc5 profiler</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40"/>
+    </frameworkAssemblies>
+	<dependencies>
+		<dependency id="Dapper" version="1.50.5"/>
+		<dependency id="Postulate.Lite.SqlServer" version="1.2.12"/>
+		<dependency id="MvcProfiler.Library" version="1.0.1"/>
+	</dependencies>
   </metadata>
 </package>

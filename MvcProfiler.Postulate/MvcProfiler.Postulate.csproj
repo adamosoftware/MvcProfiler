@@ -31,7 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Postulate.Lite.Core, Version=1.2.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postulate.Lite.Core.1.2.14\lib\net461\Postulate.Lite.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Postulate.Lite.SqlServer, Version=1.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postulate.Lite.SqlServer.1.2.12\lib\net461\Postulate.Lite.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -52,12 +62,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Dapper">
-      <Version>1.50.5</Version>
-    </PackageReference>
-    <PackageReference Include="Postulate.Lite.SqlServer">
-      <Version>1.2.12</Version>
-    </PackageReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

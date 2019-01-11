@@ -14,6 +14,7 @@
     <tags>mvc5 profiling</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40"/>
+	  <frameworkAssembly assemblyName="System.Web" targetFramework="net40"/>
     </frameworkAssemblies>
   </metadata>
 </package>
