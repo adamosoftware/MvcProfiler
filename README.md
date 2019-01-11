@@ -7,3 +7,5 @@ This is a profiler for MVC5 (.NET Framework, not Core) that captures execution t
 - There's no UI in my approach. I merely capture run times and some related HTTP request data in some tables. I would love to incorporate Razor UI in my package, but I'm not sure how to make that work from a Nuget package.
 
 - There are two packages in my solution: **MvcProfiler.Library** and **MvcProfiler.Postulate**. The Library version has no database nor ORM dependency. You must implement several abstract methods to provide database integration. The Postulate version uses [Postulate.Lite.SqlServer](https://github.com/adamosoftware/Postulate.Lite) because this would be my common use case.
+
+[to be continued... I'm still trying to fix Nuget packages]
