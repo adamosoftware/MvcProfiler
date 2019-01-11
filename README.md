@@ -31,3 +31,7 @@ This is a profiler for MVC5 (.NET Framework, not Core) that captures execution t
     - In the `Dispose` override for the controller, I [Stop](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L80) the profiler, which causes it to save to the database. This is the Postulate-specific [Save](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler.Postulate/PostulateProfilerBase.cs#L40) implementation.
     
     - You will likely want to profile certain queries or other intermediate steps in your controllers. I have several -- one to mark the time for [loading user profile info](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L35), and I specifically record whether the profile came from the cache or the database. I also record some [query times](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/Controllers/DataModelController.cs#L20) in a specific controller. Finally, I record the HTML rendering time with [StepBegin](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L45) and [StepEnd](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L74), which requires the `OnActionExecuting` and `OnActionExecuted` overrides, respectively.
+    
+Here's what the data looks like that I'm capturing:
+
+![img](https://adamosoftware.blob.core.windows.net/images/mvcprofiler.png)
