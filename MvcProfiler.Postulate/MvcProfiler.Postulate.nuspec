@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MvcProfiler.Postulate</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/adamosoftware/MvcProfiler/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/adamosoftware/MvcProfiler</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Lightweight profiler for MVC5 using Postulate.Lite ORM</description>    
+    <copyright>Copyright (c) Adam O'Neil 2019</copyright>
+    <tags>mvc5 profiler</tags>
+  </metadata>
+</package>

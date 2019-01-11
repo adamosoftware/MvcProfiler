@@ -7,14 +7,14 @@ using System.Web.Routing;
 
 namespace MvcProfiler.Postulate
 {
-	public abstract class Profiler : ProfilerBase
+	public abstract class PostulateProfilerBase : ProfilerBase
 	{
 		private const string schema = "profiler";
 		private const string profilerRequest = schema + ".Request";
 		private const string profilerStep = schema + ".Step";
 		private const string profilerParam = schema + ".Parameter";
 
-		public Profiler(RequestContext requestContext) : base(requestContext)
+		public PostulateProfilerBase(RequestContext requestContext) : base(requestContext)
 		{
 		}
 

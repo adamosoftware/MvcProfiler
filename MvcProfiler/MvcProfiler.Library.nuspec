@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MvcProfiler.Library</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/adamosoftware/MvcProfiler/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/adamosoftware/MvcProfiler</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>    
+    <copyright>Copyright (c) Adam O'Neil 2019</copyright>
+    <tags>mvc5 profiling</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net40"/>
+    </frameworkAssemblies>
+  </metadata>
+</package>
