@@ -10,7 +10,7 @@ This is a profiler for MVC5 (.NET Framework, not Core) that captures execution t
 
 - The profile data captured is [here](https://github.com/adamosoftware/MvcProfiler/tree/master/MvcProfiler/Models). There are three model classes: [Request](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/Models/Request.cs) is the main thing. One Request may have related [Query string parameters](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/Models/Parameter.cs) as well as any number of intermediate [steps](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/Models/Step.cs).
 
-## Quickstart
+## Usage
 
 - If you want full control over how profile data is captured with no ORM or database dependency, install package **MvcProfiler.Library** and write your own class based on [ProfilerBase](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/ProfilerBase.cs) and implement its three abstract methods: [VerifyDatabaseObjects](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/ProfilerBase.cs#L53), [Save](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/ProfilerBase.cs#L59), and [GetConnection](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler/ProfilerBase.cs#L64).
 
