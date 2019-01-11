@@ -24,9 +24,9 @@ This is a profiler for MVC5 (.NET Framework, not Core) that captures execution t
     
     - In my [BaseController](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs) that serves as the template for all my controllers in thie app, I do several things:
     
-    - Create a `Profiler` [property](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L17)
+    - Create a `Profiler` [property](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L17).
     
-    - Initialize the `Profiler` property during the Controller `Initialize` override [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L28). Notice that the current `requestContext` ius passed.
+    - Initialize the `Profiler` property during the Controller `Initialize` override [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L28). Notice that the current `requestContext` is passed. Notice that it initializes only when there's a user logged on.
     
     - In the `Dispose` override for the controller, I [Stop](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L80) the profiler, which causes it to save to the database. This is the Postulate-specific [Save](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler.Postulate/PostulateProfilerBase.cs#L40) implementation.
     
