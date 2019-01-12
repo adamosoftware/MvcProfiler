@@ -36,7 +36,7 @@ Here's what the data looks like that I'm capturing:
 
 ![img](https://adamosoftware.blob.core.windows.net/images/mvcprofiler.png)
 
-Note: I had originally confused Action and Result (HTML rendering) execution times. To measure HTML rendering time, you need to mark the step from `OnResultExecuting` to `OnResultExecuted`. This is now down [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L43) and [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L52) respectively.
+Note: I had originally confused Action and Result (HTML rendering) execution times. To measure HTML rendering time, you need to mark the step from `OnResultExecuting` to `OnResultExecuted`. This is now [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L43) and [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L52) respectively.
 
 This is more what we're looking for to see HTML rendering times:
 
