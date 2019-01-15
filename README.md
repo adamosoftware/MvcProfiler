@@ -26,12 +26,18 @@ This is a profiler for MVC5 (.NET Framework, not Core) that captures execution t
     
     - Create a `Profiler` [property](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L17).
     
-    - Initialize the `Profiler` property during the Controller `Initialize` override [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L28). Notice that the current `requestContext` is passed. Notice that it initializes only when there's a user logged on.
+    - Initialize the `Profiler` property during the Controller `Initialize` override [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L29). Notice that the current `requestContext` is passed. Notice that it initializes only when there's a user logged on.
     
-    - In the `Dispose` override for the controller, I [Stop](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L80) the profiler, which causes it to save to the database. This is the Postulate-specific [Save](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler.Postulate/PostulateProfilerBase.cs#L40) implementation.
+    - In the `Dispose` override for the controller, I [Stop](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L95) the profiler, which causes it to save to the database. This is the Postulate-specific [Save](https://github.com/adamosoftware/MvcProfiler/blob/master/MvcProfiler.Postulate/PostulateProfilerBase.cs#L40) implementation.
     
-    - You will likely want to profile certain queries or other intermediate steps in your controllers. I have several -- one to mark the time for [loading user profile info](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L35), and I specifically record whether the profile came from the cache or the database. I also record some [query times](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/Controllers/DataModelController.cs#L20) in a specific controller. Finally, I record the HTML rendering time with [StepBegin](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L45) and [StepEnd](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L74), which requires the `OnActionExecuting` and `OnActionExecuted` overrides, respectively.
+    - You will likely want to profile certain queries or other intermediate steps in your controllers. I have several -- one to mark the time for [loading user profile info](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L35), and I specifically record whether the profile came from the cache or the database. I also record some [query times](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/Controllers/DataModelController.cs#L20) in a specific controller. Finally, I record the action execution time with [StepBegin](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L60) and [StepEnd](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L89), which requires the `OnActionExecuting` and `OnActionExecuted` overrides, respectively.
     
 Here's what the data looks like that I'm capturing:
 
 ![img](https://adamosoftware.blob.core.windows.net/images/mvcprofiler.png)
+
+Note: I had originally confused Action and Result (HTML rendering) execution times. To measure HTML rendering time, you need to mark the step from `OnResultExecuting` to `OnResultExecuted`. This is now [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L43) and [here](https://github.com/adamosoftware/MvcSpace/blob/master/MvcSpace.App/BaseController.cs#L52) respectively.
+
+This is more what we're looking for to see HTML rendering times:
+
+![img](https://adamosoftware.blob.core.windows.net:443/images/mvcprofiler2.png)
