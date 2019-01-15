@@ -19,6 +19,6 @@ namespace MvcProfiler.Library.Models
 		/// <summary>
 		/// Milliseconds elapsed to this point
 		/// </summary>
-		public long Elasped { get; set; }
+		public long Elapsed { get; set; }
 	}
 }

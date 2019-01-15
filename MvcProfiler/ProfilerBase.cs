@@ -116,7 +116,7 @@ namespace MvcProfiler.Library
 			{
 				Message = message,
 				Number = stepNumber,
-				Elasped = ms
+				Elapsed = ms
 			});
 		}
 
