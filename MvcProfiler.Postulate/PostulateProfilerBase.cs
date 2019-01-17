@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using MvcProfiler.Library;
 using MvcProfiler.Library.Models;
-using Postulate.Lite.SqlServer.LongKey;
+using Postulate.SqlServer.LongKey;
 using System.Data;
 using System.Web.Routing;
 
