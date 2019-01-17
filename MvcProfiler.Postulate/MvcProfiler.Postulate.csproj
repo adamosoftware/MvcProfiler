@@ -37,9 +37,6 @@
     <Reference Include="Postulate.Base, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Postulate.Base.1.3.1\lib\netstandard2.0\Postulate.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Postulate.Lite.Core, Version=1.2.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Postulate.Lite.Core.1.2.14\lib\net461\Postulate.Lite.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Postulate.SqlServer, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Postulate.SqlServer.1.3.1\lib\netstandard2.0\Postulate.SqlServer.dll</HintPath>
     </Reference>
